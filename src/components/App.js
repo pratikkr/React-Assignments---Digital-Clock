@@ -5,7 +5,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: new Date().toLocaleTimeString("en-us", {
+      time: new Date().toLocaleTimeString("en-Us", {
         hour: "numeric",
         minute: "numeric",
         second: "numeric",
@@ -15,7 +15,7 @@ class App extends Component {
   }
   tick() {
     this.setState({
-      time: new Date().toLocaleTimeString("en-us", {
+      time: new Date().toLocaleTimeString("en-Us", {
         hour: "numeric",
         minute: "numeric",
         second: "numeric",
@@ -27,14 +27,13 @@ class App extends Component {
   componentDidMount() {
     this.intervalID = setInterval(() => this.tick(), 1000);
   }
-
-  componentWillUnMount() {
+  componentWillUnmount() {
     clearInterval(this.intervalID);
   }
   render() {
     return (
       <div className="App">
-        <div className="clock">
+        <div className="Clock">
           <h3 id="time">{`${this.state.time}`}</h3>
         </div>
       </div>
